@@ -13,15 +13,15 @@
         }
 
         body {
-            background: linear-gradient(to bottom, #ffcccb, #ffe4e1);
-            color: #333;
+            background: linear-gradient(to bottom, #6a0dad, #2b0a45); /* Violet to black gradient */
+            color: #f8f8f8; /* Light color for text */
             text-align: center;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background: #ff69b4;
+            background: #8a2be2; /* Violet color */
             padding: 20px;
             color: white;
         }
@@ -42,7 +42,7 @@
         }
 
         .promise, .fun-elements {
-            background: #fff0f5;
+            background: #4b0082; /* Dark violet */
             padding: 20px;
             margin: 20px 0;
             border-radius: 10px;
@@ -52,6 +52,9 @@
             width: 80%;
             height: 100px;
             margin-top: 10px;
+            background: #2b0a45; /* Dark background for textarea */
+            color: #f8f8f8; /* Light text for textarea */
+            border: 1px solid #f8f8f8; /* Light border */
         }
 
         .call-to-action {
@@ -59,7 +62,7 @@
         }
 
         button {
-            background: #d900ff;
+            background: #9400d3; /* Violet button */
             color: white;
             border: none;
             padding: 10px 20px;
@@ -68,7 +71,7 @@
         }
 
         footer {
-            background: #ff69b4;
+            background: #8a2be2; /* Violet color */
             color: white;
             padding: 10px;
             position: relative;
@@ -85,14 +88,16 @@
         .wish-card {
             margin: 10px 0;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #f8f8f8; /* Light border */
             border-radius: 5px;
+            background: #4b0082; /* Dark violet */
+            color: #f8f8f8; /* Light text */
         }
 
         .quote {
             margin-top: 20px;
             font-style: italic;
-            color: #555;
+            color: #dcdcdc; /* Light gray for quotes */
         }
     </style>
 </head>
@@ -129,7 +134,7 @@
     </section>
 
     <footer>
-        <p>Reach me anytime at syntaxsamurai13@gmail.com!</p>
+ <p>Reach me anytime at syntaxsamurai13@gmail.com!</p>
         <div class="social-media">
             <a href="#">Facebook</a>
             <a href="#">Instagram</a>
@@ -143,7 +148,7 @@
         const countdownElement = document.getElementById('countdown');
 
         function updateCountdown() {
- const now = new Date();
+            const now = new Date();
             const timeRemaining = nextBirthday - now;
 
             // Check if the countdown has finished
