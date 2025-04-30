@@ -1,219 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Jerry!</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+# Birthday Surprise Website 🎂🎉
 
-        body {
-            background: linear-gradient(to bottom, #6a0dad, #2b0a45); /* Violet to black gradient */
-            color: #f8f8f8; /* Light color for text */
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+This is a special **Birthday Celebration Website** created using **Next.js, Tailwind CSS, Framer Motion**, and **Lucide Icons**.  
+It's designed as a personal and emotional way to wish someone special — when you can't be there physically, let your code speak! 💖
 
-        header {
-            background: #8a2be2; /* Violet color */
-            padding: 20px;
-            color: white;
-        }
+---
 
-        h1 {
-            font-size: 3em;
-            margin: 0;
-        }
+## 🧠 Project Idea
 
-        .birthday-message {
-            padding: 20px;
-        }
+> **POV:** It's her birthday, but you can't meet — so you build something special instead.
 
-        .collage {
-            width: 80%;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
+The website features:
 
-        .promise, .fun-elements {
-            background: #4b0082; /* Dark violet */
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-        }
+- A live countdown timer ⏳
+- Personalized birthday messages 🎈
+- Smooth animations using Framer Motion ✨
+- Cute icons and a heartfelt design 💌
 
-        textarea {
-            width: 80%;
-            height: 100px;
-            margin-top: 10px;
-            background: #2b0a45; /* Dark background for textarea */
-            color: #f8f8f8; /* Light text for textarea */
-            border: 1px solid #f8f8f8; /* Light border */
-        }
+This was created as part of an emotional reel where the journey begins with a few lines of code in VS Code and ends with a beautiful surprise on the browser.
 
-        .call-to-action {
-            margin: 20px 0;
-        }
+---
 
-        button {
-            background: #9400d3; /* Violet button */
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+## Screenshots:
 
-        footer {
-            background: #8a2be2; /* Violet color */
-            color: white;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
+1. **Loader Page**
+   ![Screenshot 1](./public/ss1.png)
 
-        .social-media a {
-            margin: 0 10px;
-            color: white;
-            text-decoration: none;
-        }
+2. **Countdown Page**
+   ![Screenshot 2](./public/ss2.png)
 
-        .wish-card {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #f8f8f8; /* Light border */
-            border-radius: 5px;
-            background: #4b0082; /* Dark violet */
-            color: #f8f8f8; /* Light text */
-        }
+3. **Happy Birthday Message Screen**
+   ![Screenshot 3](./public/ss3.png)
 
-        .quote {
-            margin-top: 20px;
-            font-style: italic;
-            color: #dcdcdc; /* Light gray for quotes */
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Happy Birthday, Jerry!</h1>
-    </header>
+---
 
-    <section class="birthday-message">
-        <p>On this special day, I want to celebrate you and all the joy you've brought into my life.</p>
-        <img src="c:\Users\synta\OneDrive\Pictures\Screenshots\shino.jpg" alt="Collage of memories" class="collage">
-    </section>
+## 🛠️ Built With
 
-    <section class="promise">
-        <h2>A Promise to You</h2>
-        <p>As we celebrate another beautiful year of your life, I want to promise you this: I will be by your side through every moment, until the very end.</p>
-    </section>
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Lucide Icons](https://lucide.dev/)
 
-    <section class="fun-elements">
-        <h2>Countdown to Your Next Birthday</h2>
-        <div id="countdown"></div>
-        <h2>Leave Your Birthday Wishes</h2>
-        <textarea id="wishInput" placeholder="Write your wishes here..."></textarea>
-        <button id="submitWishButton">Submit Wish</button>
-        <div id="wishList"></div>
-        <div id="quoteDisplay" class="quote"></div>
-        <button id="createECardButton">Create E-Card</button>
-        <button id="reminderButton">Set Birthday Reminder</button>
-    </section>
+---
 
-    <section class="call-to-action">
-        <h2>Let’s make more memories together!</h2>
-        <button id="planAdventureButton">Plan Our Next Adventure!</button>
-    </section>
+## 🔧 Setup
 
-    <footer>
- <p>Reach me anytime at syntaxsamurai13@gmail.com!</p>
-        <div class="social-media">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-        </div>
-    </footer>
+To run this project locally:
 
-    <script>
-        // Countdown Timer
-        const nextBirthday = new Date('2025-11-22T00:00:00'); // Jerry's next birthday
-        const countdownElement = document.getElementById('countdown');
+```bash
+git clone https://github.com/Anuj579/birthday-site.git
+cd birthday-site
+npm install
+npm run dev
+```
 
-        function updateCountdown() {
-            const now = new Date();
-            const timeRemaining = nextBirthday - now;
+Make sure to update the target date in `Home` component if you want to reuse this.
 
-            // Check if the countdown has finished
-            if (timeRemaining < 0) {
-                countdownElement.innerHTML = "Happy Birthday, Jerry! 🎉";
-                clearInterval(countdownInterval); // Stop the countdown
-                return;
-            }
+---
 
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+## 🌐 Connect with Me
 
-            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
+Follow for more such creative and code-based content!
 
-        const countdownInterval = setInterval(updateCountdown, 1000);
+- 📸 **Instagram**: [@anujbuilds](https://instagram.com/anujbuilds)
+- 🎥 **YouTube**: [@anujbuilds](https://youtube.com/@anujbuilds)
+- 🐦 **Twitter/X**: [@anujbuilds](https://twitter.com/anujbuilds)
+- 💼 **LinkedIn**: [Anuj Chaudhary](https://linkedin.com/in/anujchaudhary549)
 
-        // Function to submit wishes
-        document.getElementById('submitWishButton').onclick = function() {
-            const wish = document.getElementById('wishInput').value;
-            if (wish) {
-                const wishList = document.getElementById('wishList');
-                const wishCard = document.createElement('div');
-                wishCard.className = 'wish-card';
-                wishCard.textContent = wish;
-                wishList.appendChild(wishCard);
-                document.getElementById('wishInput').value = '';
-                const quotes = [
-                    "Count your life by smiles, not tears. Count your age by friends, not years.",
-                    "You are never too old to set another goal or to dream a new dream.",
-                    "The more you praise and celebrate your life, the more there is in life to celebrate."
-                ];
-                const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-                document.getElementById('quoteDisplay').textContent = randomQuote;
-            } else {
-                alert("Please enter a wish.");
-            }
-        };
+---
 
-        // Function to create E-Card
-        document.getElementById('createECardButton').onclick = function() {
-            const wish = document.getElementById('wishInput').value;
-            if (wish) {
-                alert(`E-Card Created with your wish: "${wish}"`);
-            } else {
-                alert("Please enter a wish to create an E-Card.");
-            }
-        };
-
-        // Function to set birthday reminder
-        document.getElementById('reminderButton').onclick = function() {
-            const reminderDate = prompt("Enter your birthday (YYYY-MM-DD):");
-            if (reminderDate) {
-                alert(`Birthday reminder set for ${reminderDate}.`);
-            } else {
-                alert("Please enter a valid date.");
-            }
-        };
-
-        // Function to plan an adventure
-        document.getElementById('planAdventureButton').onclick = function() {
-            alert("Let's plan something special together!");
-        };
-    </script>
-</body>
-</html>
+Thanks for checking out this project! If you liked it, consider giving it a ⭐️ on GitHub and sharing the reel ❤️
